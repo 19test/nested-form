@@ -5,6 +5,12 @@
   <%= @survey.name %>
 </p>
 
+<ol>
+  <% for question in @survey.questions %>
+    <li><%= h question.content %></li>
+  <% end %>
+</ol>
+
 <p>
   <%= link_to "Edit", edit_survey_path(@survey) %> |
   <%= link_to "Destroy", @survey, :confirm => 'Are you sure?', :method => :delete %> |
